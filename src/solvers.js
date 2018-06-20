@@ -14,7 +14,7 @@
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
 
-var findRookSolution = function(board, start, r, cb) {
+var findRookSolution = function(board, start, r, cb) { // O(n) time
   if (start === r) {
     return cb(board);
   }
@@ -30,7 +30,7 @@ var findRookSolution = function(board, start, r, cb) {
   }
 };
 
-window.findNRooksSolution = function(n) {
+window.findNRooksSolution = function(n) { // O(n) time
   var solution;
   var board = new Board({n: n});
 
@@ -43,7 +43,7 @@ window.findNRooksSolution = function(n) {
 };
 
 // return the number of nxn chessboards that exist, with n rooks placed such that none of them can attack each other
-window.countNRooksSolutions = function(n) {
+window.countNRooksSolutions = function(n) { // O(n) time
   var solutionCount; 
   var solutionCount = 0;
   var board = new Board({n: n});
@@ -55,7 +55,7 @@ window.countNRooksSolutions = function(n) {
 };
 
 
-var findQueenSolution = function(board, start, r, cb) {
+var findQueenSolution = function(board, start, r, cb) { // O(n) time
   if (start === r) {
     return cb(board);
   }
@@ -72,7 +72,7 @@ var findQueenSolution = function(board, start, r, cb) {
 };
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n queens placed such that none of them can attack each other
-window.findNQueensSolution = function(n) {
+window.findNQueensSolution = function(n) { // O(n) time
   var board = new Board({n: n});
   var solution = board.rows();
   findQueenSolution(board, 0, n, function(board) {
@@ -83,7 +83,7 @@ window.findNQueensSolution = function(n) {
 };
 
 // return the number of nxn chessboards that exist, with n queens placed such that none of them can attack each other
-window.countNQueensSolutions = function(n) {
+window.countNQueensSolutions = function(n) { // O(n) time
   var solutionCount = 0; //fixme
   var board = new Board({n: n});
   findQueenSolution(board, 0, n, function(board) {
